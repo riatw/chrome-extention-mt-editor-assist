@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+	<script type="jquery/template" data-template>
+		{{#context_entry}}
+			<li><a href="{{url}}?__mode=view&amp;_type={{posttype}}&amp;blog_id={{blog_id}}&amp;id={{entry_id}}" target="_blank">この記事を編集</a></li>
+
+			{{#category_id}}
+			<li><a href="{{url}}?__mode=view&amp;_type=category&amp;blog_id={{blog_id}}&amp;id={{category_id}}" target="_blank">このカテゴリを編集</a></li>
+			{{/category_id}}
+
+			<li><a href="{{url}}?__mode=view&amp;_type={{posttype}}&amp;blog_id={{blog_id}}" target="_blank">記事を追加</a></li>
+			<li><a href="{{url}}?__mode=list&amp;_type=category&amp;blog_id={{blog_id}}" target="_blank">カテゴリを追加</a></li>
+		{{/context_entry}}
+
+		{{#context_page}}
+			<li><a href="{{url}}?__mode=view&amp;_type={{posttype}}&amp;blog_id={{blog_id}}&amp;id={{page_id}}" target="_blank">このページを編集</a></li>
+
+			{{#folder_id}}
+			<li><a href="{{url}}?__mode=view&amp;_type=folder&amp;blog_id={{blog_id}}&amp;id={{folder_id}}" target="_blank">このフォルダを編集</a></li>
+			{{/folder_id}}
+
+			<li><a href="{{url}}?__mode=view&amp;_type={{posttype}}&amp;blog_id={{blog_id}}" target="_blank">ページを追加</a></li>
+			<li><a href="{{url}}?__mode=list&amp;_type=folder&amp;blog_id={{blog_id}}" target="_blank">フォルダを追加</a></li>
+		{{/context_page}}
+
+		<li><a href="{{url}}?__mode=rebuild_confirm&amp;blog_id={{blog_id}}" target="_blank">所属ブログを再構築</a></li>
+		<li><a href="{{url}}?__mode=dashboard&amp;blog_id={{blog_id}}" target="_blank">管理ページに移動</a></li>
+	</script>
+
+	<div id="wrap">
+		<ul class="m-list-form">
+			<li>
+				<label>管理画面 URL</label>
+				<select name="admin_url" data-js-urls></select>
+				<a href="/options.html" target="_blank" class="form-add">追加</a>
+			</li>
+		</ul>
+
+		<ul class="m-list-view" data-js-view>
+
+		</ul>
+	</div>
+
+	<script src="js/mustache.js"></script>
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/base64.js"></script>
+	<script src="js/des.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

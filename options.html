@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="css/style.css"/>
+
+	<script language="javascript/template" data-tmpl>
+		<li data-list-item>
+			<dl>
+				<dt>サイト名</dt>
+				<dd><input type="text" data-name="label"></dd>
+			</dl>
+			<dl>
+				<dt>公開サイトURL</dt>
+				<dd><input type="text" data-name="public_url"></dd>
+			</dl>
+			<dl>
+				<dt>管理画面URL</dt>
+				<dd><input type="text" data-name="admin_url"></dd>
+			</dl>
+			<dl>
+				<dt>URLリスト（オプション）</dt>
+				<dd><input type="text" data-name="urllist"></dd>
+			</dl>
+
+			<div><button data-item-remove>削除</button></div>
+		</li>
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<ul class="m-list-options" data-list>
+
+		</ul>
+
+		<div class="m-list-btngroup">
+			<li>
+				<button data-add>追加</button>
+			</li>
+			<li>
+				<button data-save>保存</button>
+			</li>
+		</div>
+	</div>
+
+	<script src="js/mustache.js"></script>
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/options.js"></script>
+</body>
+</html>
