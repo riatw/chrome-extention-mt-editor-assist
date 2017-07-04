@@ -15,6 +15,7 @@
 			{{/category_id}}
 
 			<li><a href="{{url}}?__mode=view&amp;_type={{posttype}}&amp;blog_id={{blog_id}}" target="_blank">記事を追加</a></li>
+			<li><a href="{{url}}?__mode=view&amp;_type={{posttype}}&amp;blog_id={{blog_id}}&amp;id={{entry_id}}&duplicate=1&is_revision=1" target="_blank">リビジョンを追加</a></li>
 			<li><a href="{{url}}?__mode=list&amp;_type=category&amp;blog_id={{blog_id}}" target="_blank">カテゴリを追加</a></li>
 		{{/context_entry}}
 
@@ -26,6 +27,7 @@
 			{{/folder_id}}
 
 			<li><a href="{{url}}?__mode=view&amp;_type={{posttype}}&amp;blog_id={{blog_id}}" target="_blank">ページを追加</a></li>
+			<li><a href="{{url}}?__mode=view&amp;_type={{posttype}}&amp;blog_id={{blog_id}}&amp;id={{page_id}}&duplicate=1&is_revision=1" target="_blank">リビジョンを追加</a></li>
 			<li><a href="{{url}}?__mode=list&amp;_type=folder&amp;blog_id={{blog_id}}" target="_blank">フォルダを追加</a></li>
 		{{/context_page}}
 
