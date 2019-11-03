@@ -31,6 +31,11 @@
 			<li><a href="{{url}}?__mode=list&amp;_type=folder&amp;blog_id={{blog_id}}" target="_blank">フォルダを追加</a></li>
 		{{/context_page}}
 
+		{{#context_content_data}}
+			<li><a href="{{url}}?__mode=edit&amp;_type={{posttype}}&amp;blog_id={{blog_id}}&amp;id={{page_id}}&content_type_id={{contenttype_id}}" target="_blank">このコンテンツデータを編集</a></li>
+			<li><a href="{{url}}?__mode=edit&amp;_type={{posttype}}&amp;blog_id={{blog_id}}&content_type_id={{contenttype_id}}" target="_blank">コンテンツデータを追加</a></li>
+		{{/context_content_data}}
+
 		<li><a href="{{url}}?__mode=rebuild_confirm&amp;blog_id={{blog_id}}" target="_blank">所属ブログを再構築</a></li>
 		<li><a href="{{url}}?__mode=dashboard&amp;blog_id={{blog_id}}" target="_blank">管理ページに移動</a></li>
 	</script>

@@ -7,7 +7,24 @@
 
 $(document).ready(function()　{
 	chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
-		chrome.tabs.sendMessage(tabs[0].id, { method: "getHTML" }, function(response) {
+		// chrome.tabs.sendMessage(tabs[0].id, { method: "getHTML" }, function(response) {
+
+		function getHTML() {
+			return "<!DOCTYPE html><html>" + document.head.outerHTML + "</html>";
+		}
+
+		chrome.tabs.executeScript(tabs[0].id, {
+			code: '(' + getHTML + ')();'
+		}, (results) => {
+			var $html = $(results[0]);
+
+			if ( $html.filter("[data-adminbar]").length > 0 ) {
+				response = $html.filter("[data-adminbar]").val();
+			}
+			if ( $html.filter("[name='mtea:params']").length > 0 ) {
+				response = $html.filter("[name='mtea:params']").attr("content");
+			}
+
 			var json = response;
 			var params;
 			var page_tmpl;
@@ -112,6 +129,9 @@ $(document).ready(function()　{
 				}
 				else if ( params.posttype == "entry" ) {
 					params.context_entry = 1;
+				}
+				else if ( params.posttype == "content_data" ) {
+					params.context_content_data = 1;
 				}
 
 				if ( params.blog_id ) {
