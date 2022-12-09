@@ -10,6 +10,7 @@ $(document).ready(function()　{
 	var listItem = list.children();
 	var addBtn = $("[data-add]");
 	var saveBtn = $("[data-save]");
+	var importBtn = $("[data-import]");
 	var removeBtn = $("[data-remove]");
 
 	var urls = localStorage.getItem("urls");
@@ -59,6 +60,16 @@ $(document).ready(function()　{
 		});
 
 		localStorage.setItem("urls", JSON.stringify(urls));
+	});
+
+	// save
+	importBtn.click(function(){
+		var json = window.prompt("インポートを開始します。JSONの文字列を指定してください。");
+
+		if ( json ) {
+			localStorage.setItem("urls", json);
+			location.reload();
+		}
 	});
 
 	// remove
