@@ -10,8 +10,9 @@ $(document).ready(function()　{
 	var listItem = list.children();
 	var addBtn = $("[data-add]");
 	var saveBtn = $("[data-save]");
-	var importBtn = $("[data-import]");
 	var removeBtn = $("[data-remove]");
+	var importBtn = $("[data-import]");
+	var exportBtn = $("[data-export]");
 
 	var urls = localStorage.getItem("urls");
 	var tmpl = $("[data-tmpl").html();
@@ -62,7 +63,7 @@ $(document).ready(function()　{
 		localStorage.setItem("urls", JSON.stringify(urls));
 	});
 
-	// save
+	// import
 	importBtn.click(function(){
 		var json = window.prompt("インポートを開始します。JSONの文字列を指定してください。");
 
@@ -70,6 +71,15 @@ $(document).ready(function()　{
 			localStorage.setItem("urls", json);
 			location.reload();
 		}
+	});
+
+	// export
+	exportBtn.click(function(){
+		const urls = localStorage.getItem("urls");
+
+		navigator.clipboard.writeText(urls);
+
+		window.alert("クリップボードにコピーしました");
 	});
 
 	// remove

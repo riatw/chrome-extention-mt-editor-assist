@@ -1,82 +1,107 @@
 @charset "UTF-8";
 
-html,body {
-	margin: 0;
-	padding: 0;
+html, body {
+  margin: 0;
+  padding: 0;
 }
+
 ul {
-	margin: 0;
-	padding: 0;
-	list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
+
 li {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 #wrap {
-	padding: 20px;
-	min-width: 300px;
+  padding: 20px;
+  min-width: 300px;
 }
 
 .m-list-form {
+  li {
+    margin-top: 15px;
 
-}
-.m-list-form li {
-	margin-top: 15px;
-}
-.m-list-form li:first-child {
-	margin-top: 0;
-}
-.m-list-form li label {
-	display: block;
-	margin-bottom: 5px;
-}
-.m-list-form li input,
-.m-list-form li textarea {
-	width: 100%;
-}
-.m-list-form .form-add {
-	margin-left: 5px;
+    &:first-child {
+      margin-top: 0;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input, textarea {
+      width: 100%;
+    }
+  }
+
+  .form-add {
+    margin-left: 5px;
+  }
 }
 
 .m-list-view {
-	margin-top: 15px;
-	border-bottom: 1px solid #ccc;
-}
-.m-list-view li {
-	padding: 10px;
-	border-top: 1px solid #ccc;
+  margin-top: 15px;
+  border-bottom: 1px solid #ccc;
+
+  li {
+    padding: 10px;
+    border-top: 1px solid #ccc;
+  }
 }
 
 .m-list-options li {
-	margin-top: 10px;
-	padding: 10px;
-	border: 1px solid #ccc;
-}
-.m-list-options li:first-child {
-	margin-top: 0;
-}
-.m-list-options li dl dt {
-	display: table-cell;
-	vertical-align: middle;
-	width: 9em;
-}
-.m-list-options li dl dd {
-	display: table-cell;
-	vertical-align: middle;
-}
-.m-list-options li dl dd input {
-	padding: 3px;
-	width: 30em;
+	position: relative;
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+
+  &:first-child {
+    margin-top: 0;
+
+		dl:first-child {
+			margin-top: 0;
+		}
+  }
+
+  dl {
+		margin-top: 10px;
+
+    dt {
+      display: table-cell;
+      vertical-align: middle;
+      width: 15em;
+    }
+
+    dd {
+      display: table-cell;
+      vertical-align: middle;
+
+      input {
+        padding: 3px;
+        width: 30em;
+      }
+    }
+  }
+
+	div {
+		position: absolute;
+		right: 10px;
+		top: 10px;
+	}
 }
 
 .m-list-btngroup {
-	margin: 20px 0 0 0;
-	padding: 0;
-	list-style: none;
-}
-.m-list-btngroup li {
-	display: inline-block;
-	margin: 0 10px 0 0;
+  margin: 20px 0 0 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: inline-block;
+    margin: 0 10px 0 0;
+  }
 }
